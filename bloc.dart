@@ -8,9 +8,9 @@ and convert the incoming events into outgoing states.
 import 'package:bloc/bloc.dart';
 
 void main() {
-  // sampleUsage();
+  sampleUsage();
   // streamUsage();
-  withBlocObserver();
+  // withBlocObserver();
 }
 
 sealed class CounterEvent {}
@@ -20,6 +20,9 @@ final class CounterIncrementPressed extends CounterEvent {}
 class CounterBloc extends Bloc<CounterEvent, int> {
   CounterBloc() : super(0) {
     on<CounterIncrementPressed>((event, emit) {
+      emit(state + 1);
+      emit(state + 1);
+      emit(state + 1);
       emit(state + 1);
     });
   }
